@@ -5,11 +5,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Founder from './components/Founder';
 import Services from './components/Services';
-import HairFeature from './components/HairFeature';
-import SkinFeature from './components/SkinFeature';
-import NailsFeature from './components/NailsFeature';
-import BridalFeature from './components/BridalFeature';
-import SignatureExperience from './components/SignatureExperience';
+
 import Gallery from './components/Gallery';
 import Reviews from './components/Reviews';
 import WhyUs from './components/WhyUs';
@@ -29,11 +25,7 @@ function App() {
 
         <About />
         <Services />
-        <HairFeature />
-        <SkinFeature />
-        <NailsFeature />
-        <BridalFeature />
-        <SignatureExperience />
+
         <Founder />
         <Gallery />
         <Reviews />
