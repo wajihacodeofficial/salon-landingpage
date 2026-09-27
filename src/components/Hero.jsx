@@ -13,7 +13,7 @@ export default function Hero() {
 
     const onScroll = () => {
       const y = window.scrollY;
-      if (img)     img.style.transform     = `scale(1.05) translateY(${y * 0.15}px)`;
+      if (img)     img.style.transform     = `translateY(${y * 0.15}px)`;
       if (content) content.style.transform = `translateY(${y * 0.06}px)`;
     };
 

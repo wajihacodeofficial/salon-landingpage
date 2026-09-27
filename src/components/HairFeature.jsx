@@ -1,81 +1,32 @@
 import React from 'react';
+import { useReveal } from '../hooks/useReveal';
+import './Features.css';
 
 export default function HairFeature() {
+  const ref = useReveal();
   return (
-    <section id="hairfeature" style={styles.section}>
-      <div className="container" style={styles.inner}>
-        <div style={styles.left}>
-          <span className="label-uppercase" style={styles.eyebrow}>01 — Hair</span>
-          <h2 className="heading-lg" style={styles.headline}>
+    <section id="hairfeature" className="feature-section" ref={ref}>
+      <div className="wrap feature-section__inner reveal">
+        <div className="feature-section__left">
+          <span className="label" style={{ color: 'var(--champagne)', display: 'block', marginBottom: '1.5rem' }}>01 — Hair</span>
+          <h2 className="display-md feature-section__headline">
             Hair that feels<br />like you.
           </h2>
-          <a href="#services" className="btn btn-secondary" style={styles.cta}>
+          <a href="#booking" className="label" style={{ color: 'var(--espresso)', borderBottom: '1px solid currentColor', paddingBottom: '2px', display: 'inline-block' }}>
             EXPLORE HAIR SERVICES
           </a>
         </div>
-
-        <ul style={styles.list}>
-          {['Balayage', 'Blow Dry', 'Braids', 'Hairstyling', 'Shampoo & Conditioning', 'Hair Threading'].map((s, i) => (
-            <li key={i} style={styles.listItem}>
-              <span style={styles.dot} />
-              {s}
-            </li>
-          ))}
-        </ul>
+        <div className="feature-section__right reveal delay-1">
+          <ul className="feature-section__list">
+            {['Balayage', 'Blow Dry', 'Braids', 'Hairstyling', 'Shampoo & Conditioning', 'Hair Threading'].map((s, i) => (
+              <li key={i} className="feature-section__list-item">
+                <span style={{ display: 'block', width: '6px', height: '6px', borderRadius: '50%', background: 'var(--champagne)' }} />
+                {s}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );
 }
-
-const styles = {
-  section: {
-    backgroundColor: 'var(--color-ivory)',
-    borderTop: '1px solid var(--color-nude)',
-    borderBottom: '1px solid var(--color-nude)',
-    padding: '5rem 0',
-  },
-  inner: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    gap: '4rem',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  left: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '2rem',
-    flex: '1 1 300px',
-  },
-  eyebrow: {
-    color: 'var(--color-champagne)',
-  },
-  headline: {
-    maxWidth: '360px',
-  },
-  cta: {},
-  list: {
-    listStyle: 'none',
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '1.25rem',
-    flex: '1 1 260px',
-  },
-  listItem: {
-    fontFamily: 'var(--font-sans)',
-    fontSize: '1.0625rem',
-    display: 'flex',
-    alignItems: 'center',
-    gap: '0.875rem',
-    paddingBottom: '1.25rem',
-    borderBottom: '1px solid var(--color-nude)',
-  },
-  dot: {
-    display: 'inline-block',
-    width: '5px',
-    height: '5px',
-    borderRadius: '50%',
-    backgroundColor: 'var(--color-champagne)',
-    flexShrink: 0,
-  },
-};

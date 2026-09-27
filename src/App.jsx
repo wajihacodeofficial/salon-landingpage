@@ -28,13 +28,13 @@ function App() {
         <Hero />
         <TrustStrip />
         <About />
-        <Founder />
         <Services />
         <HairFeature />
         <SkinFeature />
         <NailsFeature />
         <BridalFeature />
         <SignatureExperience />
+        <Founder />
         <Gallery />
         <Reviews />
         <WhyUs />

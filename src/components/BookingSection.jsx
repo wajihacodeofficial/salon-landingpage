@@ -25,7 +25,7 @@ export default function BookingSection() {
     <section id="booking" className="booking" ref={ref}>
       {/* Background image */}
       <div className="booking__bg">
-        <img src="/images/nidas-salon/interior.webp" alt="" aria-hidden="true" />
+        <img src="/images/nidas-salon/exterior.webp" alt="" aria-hidden="true" />
         <div className="booking__overlay" />
       </div>
 

@@ -1,84 +1,31 @@
 import React from 'react';
+import { useReveal } from '../hooks/useReveal';
+import './Features.css';
 
 export default function SkinFeature() {
+  const ref = useReveal();
   return (
-    <section id="skinfeature" style={styles.section}>
-      <div className="container" style={styles.inner}>
-        <div style={styles.left}>
-          <span className="label-uppercase" style={styles.eyebrow}>02 — Skin & Wellness</span>
-          <h2 className="heading-lg" style={styles.headline}>
+    <section id="skinfeature" className="feature-section" ref={ref}>
+      <div className="wrap feature-section__inner reveal">
+        <div className="feature-section__left">
+          <span className="label" style={{ color: 'var(--champagne)', display: 'block', marginBottom: '1.5rem' }}>02 — Skin & Wellness</span>
+          <h2 className="display-md feature-section__headline">
             Give your skin<br />a moment of its own.
           </h2>
-          <p style={styles.copy}>
+          <p className="body-lg" style={{ color: 'rgba(41,35,33,0.7)' }}>
             Experience rejuvenating skincare and wellness services designed to restore your natural glow.
           </p>
         </div>
-
-        <ul style={styles.list}>
-          {['Korean Spa', 'Acne Treatments', 'Hair & Skin Analysis'].map((s, i) => (
-            <li key={i} style={styles.listItem}>
-              <span style={styles.dot} />
-              {s}
-            </li>
-          ))}
-        </ul>
+        <div className="feature-section__right reveal delay-1">
+          <ul className="feature-section__list">
+            {['Korean Spa', 'Acne Treatments', 'Hair & Skin Analysis'].map((s, i) => (
+              <li key={i} className="feature-section__list-item">
+                {s}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );
 }
-
-const styles = {
-  section: {
-    backgroundColor: 'var(--color-nude)',
-    padding: '5rem 0',
-  },
-  inner: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    gap: '4rem',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  left: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '1.5rem',
-    flex: '1 1 300px',
-  },
-  eyebrow: {
-    color: 'var(--color-espresso)',
-    opacity: 0.6,
-  },
-  headline: {
-    maxWidth: '360px',
-  },
-  copy: {
-    opacity: 0.75,
-    maxWidth: '340px',
-    lineHeight: 1.8,
-  },
-  list: {
-    listStyle: 'none',
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '1.25rem',
-    flex: '1 1 260px',
-  },
-  listItem: {
-    fontFamily: 'var(--font-sans)',
-    fontSize: '1.0625rem',
-    display: 'flex',
-    alignItems: 'center',
-    gap: '0.875rem',
-    paddingBottom: '1.25rem',
-    borderBottom: '1px solid rgba(41,35,33,0.12)',
-  },
-  dot: {
-    display: 'inline-block',
-    width: '5px',
-    height: '5px',
-    borderRadius: '50%',
-    backgroundColor: 'var(--color-champagne)',
-    flexShrink: 0,
-  },
-};

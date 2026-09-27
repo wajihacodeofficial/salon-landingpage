@@ -1,109 +1,79 @@
 import React from 'react';
-
-const pillars = [
-  { id: '01', label: 'HAIR',   items: ['Balayage', 'Blow Dry', 'Braids', 'Hairstyling'] },
-  { id: '02', label: 'SKIN',   items: ['Korean Spa', 'Acne Treatments', 'Skin Analysis'] },
-  { id: '03', label: 'NAILS',  items: ['Acrylic Nails', 'Manicure', 'Pedicure'] },
-  { id: '04', label: 'MAKEUP', items: ['Make-up Services', 'Bridal Services'] },
-  { id: '05', label: 'SPA',    items: ['Massage', 'Body Waxing', 'Waxing'] },
-];
+import { useReveal } from '../hooks/useReveal';
+import './Features.css';
 
 export default function SignatureExperience() {
+  const ref = useReveal();
+  
   return (
-    <section id="signature" style={styles.section}>
-      <div className="container">
-        {/* Header */}
-        <div style={styles.header}>
-          <span className="label-uppercase" style={styles.eyebrow}>The Nida's Touch</span>
-          <h2 className="heading-lg" style={styles.headline}>
-            More than a beauty appointment.
-          </h2>
-          <p style={styles.subline}>
+    <section className="signature-section" ref={ref}>
+      <div className="wrap">
+        <div className="signature-section__header reveal">
+          <span className="label" style={{ color: 'var(--espresso)', display: 'block', marginBottom: '1rem' }}>The Nida's Touch</span>
+          <h2 className="display-md" style={{ color: 'var(--espresso)' }}>More than a beauty appointment.</h2>
+          <p className="body-lg signature-section__desc">
             From the first consultation to the finishing touch, every detail is part of your experience.
           </p>
         </div>
 
-        {/* Pillars */}
-        <div style={styles.pillars}>
-          {pillars.map((p) => (
-            <div key={p.id} style={styles.pillar}>
-              <div style={styles.pillarTop}>
-                <span style={styles.pillarNum}>{p.id}</span>
-                <span className="label-uppercase" style={styles.pillarLabel}>{p.label}</span>
-              </div>
-              <ul style={styles.pillarList}>
-                {p.items.map((item, i) => (
-                  <li key={i} style={styles.pillarItem}>{item}</li>
-                ))}
-              </ul>
+        <div className="signature-section__menu reveal delay-1">
+          {/* Col 1 */}
+          <div>
+            <div className="signature-section__col-title">
+              <span>01</span> HAIR
             </div>
-          ))}
+            <ul className="signature-section__links">
+              <li><a href="#hair" className="signature-section__link">Balayage</a></li>
+              <li><a href="#hair" className="signature-section__link">Blow Dry</a></li>
+              <li><a href="#hair" className="signature-section__link">Braids</a></li>
+              <li><a href="#hair" className="signature-section__link">Hairstyling</a></li>
+            </ul>
+          </div>
+          {/* Col 2 */}
+          <div>
+            <div className="signature-section__col-title">
+              <span>02</span> SKIN
+            </div>
+            <ul className="signature-section__links">
+              <li><a href="#skin" className="signature-section__link">Korean Spa</a></li>
+              <li><a href="#skin" className="signature-section__link">Acne Treatments</a></li>
+              <li><a href="#skin" className="signature-section__link">Skin Analysis</a></li>
+            </ul>
+          </div>
+          {/* Col 3 */}
+          <div>
+            <div className="signature-section__col-title">
+              <span>03</span> NAILS
+            </div>
+            <ul className="signature-section__links">
+              <li><a href="#nails" className="signature-section__link">Acrylic Nails</a></li>
+              <li><a href="#nails" className="signature-section__link">Manicure</a></li>
+              <li><a href="#nails" className="signature-section__link">Pedicure</a></li>
+            </ul>
+          </div>
+          {/* Col 4 */}
+          <div>
+            <div className="signature-section__col-title">
+              <span>04</span> MAKEUP
+            </div>
+            <ul className="signature-section__links">
+              <li><a href="#makeup" className="signature-section__link">Make-up Services</a></li>
+              <li><a href="#makeup" className="signature-section__link">Bridal Services</a></li>
+            </ul>
+          </div>
+          {/* Col 5 */}
+          <div>
+            <div className="signature-section__col-title">
+              <span>05</span> SPA
+            </div>
+            <ul className="signature-section__links">
+              <li><a href="#spa" className="signature-section__link">Massage</a></li>
+              <li><a href="#spa" className="signature-section__link">Body Waxing</a></li>
+              <li><a href="#spa" className="signature-section__link">Waxing</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
   );
 }
-
-const styles = {
-  section: {
-    backgroundColor: 'var(--color-espresso)',
-    color: 'var(--color-ivory)',
-    padding: '6rem 0',
-  },
-  header: {
-    maxWidth: '600px',
-    marginBottom: '4rem',
-  },
-  eyebrow: {
-    display: 'inline-block',
-    color: 'var(--color-champagne)',
-    marginBottom: '1.25rem',
-  },
-  headline: {
-    color: 'var(--color-white)',
-    marginBottom: '1.25rem',
-  },
-  subline: {
-    opacity: 0.65,
-    lineHeight: 1.8,
-    fontSize: '1rem',
-  },
-  pillars: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
-    borderTop: '1px solid rgba(248,244,239,0.12)',
-  },
-  pillar: {
-    padding: '2.5rem 1.5rem 2.5rem 0',
-    borderRight: '1px solid rgba(248,244,239,0.12)',
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '1.5rem',
-  },
-  pillarTop: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '0.4rem',
-  },
-  pillarNum: {
-    fontFamily: 'var(--font-sans)',
-    fontSize: '0.6875rem',
-    color: 'var(--color-champagne)',
-    letterSpacing: '0.1em',
-  },
-  pillarLabel: {
-    fontSize: '0.75rem',
-    color: 'var(--color-ivory)',
-  },
-  pillarList: {
-    listStyle: 'none',
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '0.6rem',
-  },
-  pillarItem: {
-    fontFamily: 'var(--font-sans)',
-    fontSize: '0.875rem',
-    opacity: 0.6,
-  },
-};
