@@ -48,8 +48,8 @@ export default function Services() {
     <section id="services" className="services" ref={ref}>
       <div className="wrap">
         {/* Header */}
-        <div className="services__header reveal">
-          <span className="label" style={{ color: 'var(--champagne)' }}>What We Offer</span>
+        <div className="services__header reveal" style={{ textAlign: 'center' }}>
+          <span className="section-eyebrow" style={{ color: 'var(--champagne)' }}>What We Offer</span>
           <h2 className="display-lg services__headline">
             Beauty, beautifully<br /><em>covered.</em>
           </h2>

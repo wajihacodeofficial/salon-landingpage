@@ -14,8 +14,8 @@ export default function WhyUs() {
   return (
     <section id="whyus" style={{ background: 'var(--ivory)', padding: '7rem 0', borderTop: '1px solid var(--nude)' }} ref={ref}>
       <div className="wrap">
-        <div style={{ marginBottom: '4rem' }}>
-          <span className="label reveal" style={{ color: 'var(--champagne)', display: 'block', marginBottom: '1rem' }}>Why Choose Us</span>
+        <div style={{ marginBottom: '4rem', textAlign: 'center' }}>
+          <span className="section-eyebrow reveal" style={{ color: 'var(--champagne)' }}>Why Choose Us</span>
           <h2 className="display-md reveal delay-1">Why Nida's Salon.</h2>
         </div>
         <div style={{ maxWidth: '700px' }}>

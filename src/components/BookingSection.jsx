@@ -31,7 +31,7 @@ export default function BookingSection() {
 
       <div className="wrap booking__inner">
         <div className="booking__headline reveal">
-          <span className="label" style={{ color: 'var(--champagne)', display: 'block', marginBottom: '1rem' }}>Book a Visit</span>
+          <span className="section-eyebrow" style={{ color: 'var(--champagne)' }}>Book a Visit</span>
           <h2 className="display-lg" style={{ color: 'var(--white)' }}>
             Ready for your<br /><em style={{ fontStyle: 'italic', color: 'var(--champagne)' }}>next beauty moment?</em>
           </h2>

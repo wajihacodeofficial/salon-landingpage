@@ -25,7 +25,7 @@ export default function Reviews() {
             <p className="reviews__score">4.9</p>
             <div>
               <p className="reviews__stars">★★★★★</p>
-              <p className="label reviews__count" style={{ color: 'var(--champagne)' }}>142 Google Reviews</p>
+              <p className="section-eyebrow reviews__count" style={{ color: 'var(--champagne)' }}>142 Google Reviews</p>
             </div>
           </div>
           <h2 className="display-md reviews__headline reveal delay-1">Loved by our clients.</h2>

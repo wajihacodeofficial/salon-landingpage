@@ -9,7 +9,7 @@ export default function SocialMedia() {
       <div className="wrap">
         <div className="social-section reveal">
           <div className="social-section__left">
-            <span className="label" style={{ color: 'rgba(41,35,33,0.5)', display: 'block', marginBottom: '1.5rem' }}>Follow Along</span>
+            <span className="section-eyebrow reveal" style={{ color: 'rgba(41,35,33,0.6)' }}>Follow Along</span>
             <h2 className="display-md" style={{ color: 'var(--espresso)', marginBottom: '1.5rem' }}>
               Follow the artistry.
             </h2>

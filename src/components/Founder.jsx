@@ -20,7 +20,7 @@ export default function Founder() {
 
         {/* Right: Content */}
         <div className="founder__content">
-          <span className="label founder__eyebrow reveal delay-1">Meet The Founder</span>
+          <span className="section-eyebrow reveal delay-1" style={{ color: 'var(--espresso)' }}>Meet The Founder</span>
           
           <h2 className="display-sm founder__headline reveal delay-2">
             Where you'll <em>always</em><br />leave as your best self

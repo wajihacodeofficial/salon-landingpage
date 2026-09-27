@@ -22,8 +22,8 @@ export default function Gallery() {
   return (
     <section id="gallery" className="gallery" ref={ref}>
       {/* Header */}
-      <div className="wrap gallery__header reveal">
-        <span className="label" style={{ color: 'var(--champagne)', display: 'block', marginBottom: '1.5rem' }}>The Space</span>
+      <div className="wrap gallery__header reveal" style={{ textAlign: 'center' }}>
+        <span className="section-eyebrow" style={{ color: 'var(--champagne)' }}>The Space</span>
         <h2 className="display-md gallery__headline">Inside Nida's Salon.</h2>
         <p className="body-lg gallery__subline">
           A real look at our salon — from styling stations and treatment rooms to the pedicure lounge and skin suite.

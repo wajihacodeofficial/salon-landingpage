@@ -8,8 +8,8 @@ export default function SignatureExperience() {
   return (
     <section className="signature-section" ref={ref}>
       <div className="wrap">
-        <div className="signature-section__header reveal">
-          <span className="label" style={{ color: 'var(--espresso)', display: 'block', marginBottom: '1rem' }}>The Nida's Touch</span>
+        <div className="signature-section__header reveal" style={{ textAlign: 'center', maxWidth: '100%' }}>
+          <span className="section-eyebrow" style={{ color: 'var(--espresso)' }}>The Nida's Touch</span>
           <h2 className="display-md" style={{ color: 'var(--espresso)' }}>More than a beauty appointment.</h2>
           <p className="body-lg signature-section__desc">
             From the first consultation to the finishing touch, every detail is part of your experience.

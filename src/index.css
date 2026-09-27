@@ -86,6 +86,18 @@ ul, ol {
   text-transform: uppercase;
 }
 
+/* Larger, centered eyebrow label for section headers */
+.section-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
 .display-xl {
   font-family: var(--font-serif);
   font-size: clamp(3.5rem, 8vw, 7rem);

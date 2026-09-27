@@ -6,9 +6,9 @@ export default function About() {
   return (
     <section id="about" style={{ background: 'var(--ivory)', padding: '7rem 0' }} ref={ref}>
       <div className="wrap" style={{ display: 'flex', flexWrap: 'wrap', gap: '5rem', alignItems: 'flex-end', justifyContent: 'space-between' }}>
-        <div style={{ flex: '1 1 340px' }}>
-          <span className="label reveal" style={{ color: 'var(--champagne)', display: 'block', marginBottom: '1.5rem' }}>The Nida's Experience</span>
-          <h2 className="display-lg reveal delay-1" style={{ maxWidth: '480px' }}>
+        <div style={{ flex: '1 1 340px', textAlign: 'center' }}>
+          <span className="section-eyebrow reveal" style={{ color: 'var(--champagne)' }}>The Nida's Experience</span>
+          <h2 className="display-lg reveal delay-1" style={{ maxWidth: '480px', margin: '0 auto' }}>
             Beauty,<br />thoughtfully<br /><em style={{ fontStyle: 'italic', color: '#6b4c3b' }}>crafted around you.</em>
           </h2>
         </div>

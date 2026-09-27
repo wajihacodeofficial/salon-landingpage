@@ -7,7 +7,7 @@ export default function Location() {
     <section id="contact" style={{ background: 'var(--espresso)', color: 'var(--ivory)', padding: '7rem 0' }} ref={ref}>
       <div className="wrap" style={{ display: 'flex', flexWrap: 'wrap', gap: '5rem', justifyContent: 'space-between' }}>
         <div style={{ flex: '1 1 340px' }}>
-          <span className="label reveal" style={{ color: 'var(--champagne)', display: 'block', marginBottom: '1.5rem' }}>Find Us</span>
+          <span className="section-eyebrow reveal" style={{ color: 'var(--champagne)' }}>Find Us</span>
           <h2 className="display-lg reveal delay-1" style={{ color: 'var(--white)', marginBottom: '3rem' }}>Come<br />visit us.</h2>
           <div className="reveal delay-2" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             <div>
