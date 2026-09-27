@@ -35,7 +35,7 @@ export default function Navigation() {
           {/* Desktop links */}
           <nav className="nav__links" aria-label="Main navigation">
             {links.map((l) => (
-              <a key={l} href={`#${l.toLowerCase()}`} className="nav__link">
+              <a key={l} href={l === 'Contact' ? '#booking' : `#${l.toLowerCase()}`} className="nav__link">
                 {l}
               </a>
             ))}
@@ -68,7 +68,7 @@ export default function Navigation() {
             {links.map((l, i) => (
               <a
                 key={l}
-                href={`#${l.toLowerCase()}`}
+                href={l === 'Contact' ? '#booking' : `#${l.toLowerCase()}`}
                 className="nav__overlay-link"
                 style={{ transitionDelay: menuOpen ? `${0.05 * (i + 1)}s` : '0s' }}
                 onClick={() => setMenuOpen(false)}
