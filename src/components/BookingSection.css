@@ -4,11 +4,12 @@
 
 .booking {
   position: relative;
-  padding: 8rem 0;
-  min-height: 800px;
+  padding: 9rem 0;
+  min-height: 900px;
   display: flex;
   align-items: center;
   color: var(--ivory);
+  overflow: hidden;
 }
 
 .booking__bg {
@@ -27,7 +28,44 @@
 .booking__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(41, 35, 33, 0.85); /* Espresso with high opacity */
+  background: linear-gradient(
+    135deg,
+    rgba(41, 35, 33, 0.82) 0%,
+    rgba(41, 35, 33, 0.60) 50%,
+    rgba(41, 35, 33, 0.80) 100%
+  );
+}
+
+/* ─── Logo watermark over photo ─── */
+.booking__logo-mark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  pointer-events: none;
+  user-select: none;
+  text-align: center;
+  opacity: 0.08;
+}
+
+.booking__logo-mark span {
+  font-family: var(--font-serif);
+  font-size: clamp(5rem, 14vw, 12rem);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--champagne);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.booking__logo-sub {
+  font-size: clamp(1.5rem, 4vw, 3.5rem) !important;
+  letter-spacing: 0.5em !important;
 }
 
 .booking__inner {

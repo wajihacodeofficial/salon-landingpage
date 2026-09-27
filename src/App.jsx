@@ -13,7 +13,7 @@ import SignatureExperience from './components/SignatureExperience';
 import Gallery from './components/Gallery';
 import Reviews from './components/Reviews';
 import WhyUs from './components/WhyUs';
-import Location from './components/Location';
+
 import BookingSection from './components/BookingSection';
 import SocialMedia from './components/SocialMedia';
 import Footer from './components/Footer';
@@ -38,7 +38,7 @@ function App() {
         <Gallery />
         <Reviews />
         <WhyUs />
-        <Location />
+
         <BookingSection />
         <SocialMedia />
       </main>

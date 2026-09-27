@@ -23,24 +23,79 @@ export default function BookingSection() {
 
   return (
     <section id="booking" className="booking" ref={ref}>
-      {/* Background image */}
+      {/* Full-bleed exterior background */}
       <div className="booking__bg">
-        <img src="/images/nidas-salon/exterior.webp" alt="" aria-hidden="true" />
+        <img src="/images/nidas-salon/exterior.webp" alt="Nida's Salon exterior" />
         <div className="booking__overlay" />
       </div>
 
+      {/* Logo watermark visible over photo */}
+      <div className="booking__logo-mark">
+        <span>NIDA'S</span>
+        <span className="booking__logo-sub">SALON</span>
+      </div>
+
       <div className="wrap booking__inner">
+
+        {/* LEFT — Find Us */}
         <div className="booking__headline reveal">
-          <span className="section-eyebrow" style={{ color: 'var(--champagne)' }}>Book a Visit</span>
-          <h2 className="display-lg" style={{ color: 'var(--white)' }}>
-            Ready for your<br /><em style={{ fontStyle: 'italic', color: 'var(--champagne)' }}>next beauty moment?</em>
+          <span className="section-eyebrow" style={{ color: 'var(--champagne)', textAlign: 'left' }}>Find Us · Book a Visit</span>
+          <h2 className="display-lg" style={{ color: 'var(--white)', marginBottom: '2.5rem' }}>
+            Come visit us<br /><em style={{ fontStyle: 'italic', color: 'var(--champagne)' }}>— or book online.</em>
           </h2>
-          <p className="body-lg reveal delay-1" style={{ color: 'rgba(248,244,239,0.65)', marginTop: '1.5rem', maxWidth: '380px' }}>
-            Book your appointment with Nida's Salon. We'll confirm your availability via WhatsApp.
-          </p>
+
+          {/* Address */}
+          <div className="reveal delay-1" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '2.5rem' }}>
+            <div>
+              <p className="label" style={{ color: 'var(--champagne)', marginBottom: '0.5rem' }}>Address</p>
+              <p className="body-sm" style={{ opacity: 0.75, lineHeight: 1.9 }}>
+                Shop No. 01, Ground Floor,<br />
+                Plot No. 362, Decent Heights,<br />
+                near Mazar-e-Quaid,<br />
+                Amil Colony, Karachi 75300.
+              </p>
+            </div>
+            <div style={{ display: 'flex', gap: '3rem' }}>
+              <div>
+                <p className="label" style={{ color: 'var(--champagne)', marginBottom: '0.4rem' }}>Phone</p>
+                <a href="tel:03012992766" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9375rem', opacity: 0.75, color: 'inherit', textDecoration: 'none' }}>
+                  0301 2992766
+                </a>
+              </div>
+              <div>
+                <p className="label" style={{ color: 'var(--champagne)', marginBottom: '0.4rem' }}>Hours</p>
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9375rem', opacity: 0.75 }}>12:00 PM – 9:00 PM</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick action buttons */}
+          <div className="reveal delay-2" style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', maxWidth: '240px' }}>
+            {[
+              { label: 'CALL NOW', href: 'tel:03012992766' },
+              { label: 'GET DIRECTIONS', href: "https://www.google.com/maps/search/Nida's+Salon+Decent+Heights+Amil+Colony+Karachi" },
+              { label: 'WHATSAPP', href: "https://wa.me/923012992766?text=Hello%20Nida's%20Salon%2C%20I%20would%20like%20to%20book%20an%20appointment." },
+            ].map((b, i) => (
+              <a
+                key={i}
+                href={b.href}
+                target={b.href.startsWith('http') ? '_blank' : undefined}
+                rel={b.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                className="btn btn-outline-light"
+                style={{ justifyContent: 'center', transitionDelay: `${0.1 * i}s` }}
+              >
+                {b.label}
+              </a>
+            ))}
+          </div>
         </div>
 
+        {/* RIGHT — Booking Form */}
         <div className="booking__form-wrap reveal delay-2">
+          <p className="label" style={{ color: 'var(--champagne)', marginBottom: '0.5rem', display: 'block' }}>Book a Visit</p>
+          <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.6rem', color: 'var(--espresso)', marginBottom: '2rem', fontWeight: 400 }}>
+            Request your appointment
+          </h3>
           {submitted ? (
             <div className="booking__success">
               <h3>Request Sent ✓</h3>
@@ -88,6 +143,7 @@ export default function BookingSection() {
             </form>
           )}
         </div>
+
       </div>
     </section>
   );
