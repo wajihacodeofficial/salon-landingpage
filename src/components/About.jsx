@@ -6,18 +6,29 @@ export default function About() {
   return (
     <section id="about" style={{ background: 'var(--ivory)', padding: '7rem 0' }} ref={ref}>
       <div className="wrap" style={{ display: 'flex', flexWrap: 'wrap', gap: '5rem', alignItems: 'flex-end', justifyContent: 'space-between' }}>
-        <div style={{ flex: '1 1 340px', textAlign: 'center' }}>
-          <span className="section-eyebrow reveal" style={{ color: 'var(--champagne)' }}>The Nida's Experience</span>
-          <h2 className="display-lg reveal delay-1" style={{ maxWidth: '480px', margin: '0 auto' }}>
+        {/* Left: heading left-aligned */}
+        <div style={{ flex: '1 1 340px', textAlign: 'left' }}>
+          <span className="section-eyebrow reveal" style={{ color: 'var(--champagne)', textAlign: 'left' }}>The Nida's Experience</span>
+          <h2 className="display-lg reveal delay-1" style={{ maxWidth: '480px' }}>
             Beauty,<br />thoughtfully<br /><em style={{ fontStyle: 'italic', color: '#6b4c3b' }}>crafted around you.</em>
           </h2>
         </div>
+
+        {/* Right: larger circle image above text */}
         <div style={{ flex: '1 1 300px', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-          {/* Circular image above the text */}
-          <div className="reveal" style={{ width: '110px', height: '110px', borderRadius: '50%', overflow: 'hidden', border: '3px solid #6b4c3b', boxShadow: '0 8px 24px rgba(107,76,59,0.18)', flexShrink: 0 }}>
+          {/* Circular image */}
+          <div className="reveal" style={{
+            width: '200px',
+            height: '200px',
+            borderRadius: '50%',
+            overflow: 'hidden',
+            border: '4px solid #6b4c3b',
+            boxShadow: '0 12px 36px rgba(107,76,59,0.22)',
+            flexShrink: 0,
+          }}>
             <img
-              src="/images/nidas-salon/interior.webp"
-              alt="Nida's Salon interior"
+              src="/images/nidas-salon/spa.webp"
+              alt="Nida's Salon spa experience"
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
           </div>
