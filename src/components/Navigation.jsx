@@ -44,7 +44,8 @@ export default function Navigation() {
           {/* Right */}
           <div className="nav__right">
             <a href="#booking" className="btn btn-dark nav__book">
-              BOOK APPOINTMENT
+              <span className="nav__book-short">BOOK</span>
+              <span className="nav__book-full">BOOK APPOINTMENT</span>
             </a>
             <button
               className={`nav__burger ${menuOpen ? 'is-open' : ''}`}

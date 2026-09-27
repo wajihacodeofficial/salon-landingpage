@@ -47,29 +47,13 @@ const categories = [
   },
 ];
 
-/* All services for the full expanded list */
 const allServices = [
-  'Acne Treatments',
-  'Acrylic Nails',
-  'Balayage',
-  'Blow Dry',
-  'Body Waxing',
-  'Braids',
-  'Brazilian Waxing',
-  'Bridal Services',
-  'Eyebrow Beautification',
-  'Eyebrow Shaping',
-  'Eyebrow Threading',
-  'Hairstyling',
-  'Hair Threading',
-  'Hair & Skin Analysis',
-  'Korean Spa',
-  'Make-up Services',
-  'Manicure',
-  'Massage',
-  'Pedicure',
-  'Shampoo & Conditioning',
-  'Waxing',
+  'Acne Treatments', 'Acrylic Nails', 'Balayage', 'Blow Dry',
+  'Body Waxing', 'Braids', 'Brazilian Waxing', 'Bridal Services',
+  'Eyebrow Beautification', 'Eyebrow Shaping', 'Eyebrow Threading',
+  'Hairstyling', 'Hair Threading', 'Hair & Skin Analysis',
+  'Korean Spa', 'Make-up Services', 'Manicure', 'Massage',
+  'Pedicure', 'Shampoo & Conditioning', 'Waxing',
 ];
 
 export default function Services() {
@@ -79,6 +63,7 @@ export default function Services() {
   return (
     <section id="services" className="services" ref={ref}>
       <div className="wrap">
+        {/* Header */}
         <div className="services__header reveal">
           <span className="section-eyebrow" style={{ color: 'var(--champagne)' }}>What We Offer</span>
           <h2 className="display-sm services__headline reveal delay-1">
@@ -86,12 +71,37 @@ export default function Services() {
           </h2>
         </div>
 
+        {/* ── MOBILE ONLY: 2-column card grid ── */}
+        <div className="services__card-grid">
+          {categories.map((cat, i) => (
+            <a
+              key={cat.id}
+              href={cat.anchor}
+              className="services__card reveal"
+            >
+              <div className="services__card-img-wrap">
+                <img
+                  src={cat.image}
+                  alt={cat.title}
+                  className="services__card-img"
+                  loading="lazy"
+                />
+                <span className="services__card-num">{cat.id}</span>
+              </div>
+              <div className="services__card-body">
+                <h3 className="services__card-title">{cat.title}</h3>
+                <p className="services__card-desc">{cat.desc}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        {/* ── DESKTOP ONLY: interactive hover list + image ── */}
         <div className="services__layout">
           {/* Left: Interactive List */}
           <div className="services__list">
             {categories.map((cat, i) => {
               const isFaded = hoveredIdx !== null && hoveredIdx !== i;
-
               return (
                 <a
                   href={cat.anchor}
@@ -113,7 +123,7 @@ export default function Services() {
             })}
           </div>
 
-          {/* Right: Dynamic Image */}
+          {/* Right: Dynamic hover image */}
           <div className="services__image-wrapper reveal delay-3">
             {categories.map((cat, i) => (
               <img
@@ -127,7 +137,7 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Full menu tag list */}
+        {/* Full services tag list */}
         <div className="services__full reveal delay-4">
           <p className="label" style={{ color: 'var(--champagne)', marginBottom: '1.5rem', letterSpacing: '0.12em' }}>
             ALL SERVICES

@@ -1,7 +1,13 @@
 .reviews {
   background: var(--nude);
-  padding: 7rem 0;
+  padding: 5rem 0;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .reviews {
+    padding: 7rem 0;
+  }
 }
 
 .reviews__header {
@@ -17,7 +23,7 @@
 
 .reviews__score {
   font-family: var(--font-serif);
-  font-size: 5rem;
+  font-size: clamp(3rem, 10vw, 5rem);
   line-height: 1;
   color: var(--espresso);
 }
@@ -127,4 +133,28 @@
 .reviews__cta {
   display: flex;
   justify-content: flex-start;
+}
+
+@media (max-width: 640px) {
+  .reviews__header {
+    margin-bottom: 2.5rem;
+  }
+
+  .reviews__rating {
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .reviews__track-container {
+    margin-bottom: 2.5rem;
+  }
+
+  .review-card {
+    width: 280px;
+    padding: 1.75rem;
+  }
+
+  .review-card__text {
+    font-size: 1rem;
+  }
 }

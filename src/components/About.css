@@ -1,7 +1,13 @@
 .about {
   background: var(--ivory);
-  padding: 8rem 0;
+  padding: 5rem 0;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .about {
+    padding: 8rem 0;
+  }
 }
 
 .about__inner {

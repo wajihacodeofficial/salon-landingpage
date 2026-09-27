@@ -4,12 +4,19 @@
 
 .booking {
   position: relative;
-  padding: 9rem 0;
-  min-height: 900px;
+  padding: 5rem 0;
+  min-height: auto;
   display: flex;
   align-items: center;
   color: var(--ivory);
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .booking {
+    padding: 9rem 0;
+    min-height: 900px;
+  }
 }
 
 .booking__bg {
@@ -93,10 +100,17 @@
 .booking__form-wrap {
   flex: 1;
   background: var(--ivory);
-  padding: 3rem 2.5rem;
+  padding: 2rem 1.5rem;
   color: var(--espresso);
   width: 100%;
-  max-width: 540px;
+  max-width: 100%;
+}
+
+@media (min-width: 600px) {
+  .booking__form-wrap {
+    padding: 3rem 2.5rem;
+    max-width: 540px;
+  }
 }
 
 .booking__form {

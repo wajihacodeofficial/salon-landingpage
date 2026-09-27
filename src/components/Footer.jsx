@@ -99,7 +99,7 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer style={{ background: '#2a1f1a', paddingTop: '0' }}>
-      <div className="wrap" style={{ padding: '5rem 2rem 3rem' }}>
+      <div className="wrap" style={{ padding: 'clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 5%, 2rem) 3rem' }}>
         <div className="footer" style={{ borderBottom: '1px solid rgba(200,170,135,0.15)', paddingBottom: '4rem', marginBottom: '3rem' }}>
 
           {/* Brand + Pill Buttons */}
@@ -112,7 +112,7 @@ export default function Footer() {
             </p>
 
             {/* Uniform pill buttons */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.65rem', maxWidth: '380px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '0.65rem', maxWidth: '380px' }}>
               {socialLinks.map(({ icon, label, href }, i) => (
                 <a
                   key={i}

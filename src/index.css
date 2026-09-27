@@ -152,6 +152,12 @@ ul, ol {
   padding: 0 5%;
 }
 
+@media (max-width: 480px) {
+  .wrap {
+    padding: 0 1.25rem;
+  }
+}
+
 .wrap--narrow {
   max-width: 900px;
 }
@@ -309,5 +315,16 @@ ul, ol {
   .reveal, .reveal-left, .reveal-right {
     opacity: 1;
     transform: none;
+  }
+}
+
+/* ============================================================
+   MOBILE GLOBAL OVERRIDES
+   ============================================================ */
+@media (max-width: 640px) {
+  /* Tighter buttons on mobile */
+  .btn {
+    padding: 0.85rem 1.5rem;
+    font-size: 0.7rem;
   }
 }

@@ -29,7 +29,7 @@ export default function Hero() {
           src="/images/nidas-salon/hero.webp"
           alt="Nida's Salon interior — arched gold mirrors, Karachi"
           className="hero__img"
-          fetchpriority="high"
+          fetchPriority="high"
         />
         <div className="hero__overlay" />
       </div>
