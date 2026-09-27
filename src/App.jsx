@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import QuickDiscovery from './components/QuickDiscovery';
 
 import About from './components/About';
-import Founder from './components/Founder';
 import Services from './components/Services';
 
 import Gallery from './components/Gallery';
@@ -28,7 +27,6 @@ function App() {
         <About />
         <Services />
 
-        <Founder />
         <Gallery />
         <Reviews />
         <WhyUs />
