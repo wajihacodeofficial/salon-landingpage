@@ -1,0 +1,144 @@
+/* ============================================================
+   BOOKING SECTION
+   ============================================================ */
+
+.booking {
+  position: relative;
+  padding: 8rem 0;
+  min-height: 800px;
+  display: flex;
+  align-items: center;
+  color: var(--ivory);
+}
+
+.booking__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.booking__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.booking__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(41, 35, 33, 0.85); /* Espresso with high opacity */
+}
+
+.booking__inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .booking__inner {
+    flex-direction: row;
+    gap: 6rem;
+    align-items: flex-start;
+  }
+}
+
+.booking__headline {
+  flex: 1;
+}
+
+/* --- Form --- */
+.booking__form-wrap {
+  flex: 1;
+  background: var(--ivory);
+  padding: 3rem 2.5rem;
+  color: var(--espresso);
+  width: 100%;
+  max-width: 540px;
+}
+
+.booking__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.booking__row {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 600px) {
+  .booking__row {
+    flex-direction: row;
+  }
+}
+
+.booking__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.booking__field label {
+  color: var(--espresso);
+  opacity: 0.7;
+}
+
+.booking__field input,
+.booking__field select,
+.booking__field textarea {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  padding: 1rem 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(41, 35, 33, 0.2);
+  color: var(--espresso);
+  transition: border-color 0.3s;
+  border-radius: 0; /* Remove iOS default styles */
+}
+
+.booking__field input:focus,
+.booking__field select:focus,
+.booking__field textarea:focus {
+  outline: none;
+  border-color: var(--champagne);
+}
+
+.booking__field select {
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23292321" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: center;
+  cursor: pointer;
+}
+
+.booking__field textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.booking__success {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.booking__success h3 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--espresso);
+  margin-bottom: 1rem;
+}
+
+.booking__success p {
+  color: rgba(41, 35, 33, 0.75);
+  line-height: 1.6;
+}

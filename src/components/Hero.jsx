@@ -1,134 +1,88 @@
-import React from 'react';
-import { salonImages } from '../config/images';
+import React, { useEffect, useRef } from 'react';
+import './Hero.css';
 
 export default function Hero() {
+  const heroRef = useRef(null);
+
+  // Subtle parallax on scroll
+  useEffect(() => {
+    const el = heroRef.current;
+    if (!el) return;
+    const img = el.querySelector('.hero__img');
+    const content = el.querySelector('.hero__content');
+
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (img)     img.style.transform     = `scale(1.05) translateY(${y * 0.15}px)`;
+      if (content) content.style.transform = `translateY(${y * 0.06}px)`;
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <section id="hero" style={styles.heroSection}>
-      <div style={styles.overlay}></div>
-      <img src={salonImages.hero} alt="Nida's Salon Interior" style={styles.backgroundImage} />
-      
-      <div style={styles.contentContainer} className="container fade-in">
-        <span className="label-uppercase" style={styles.eyebrow}>Nida's Salon • Karachi</span>
-        
-        <h1 className="heading-xl" style={styles.headline}>
-          Where Elegance<br />Meets Artistry.
-        </h1>
-        
-        <p style={styles.supportingCopy}>
-          Discover a world of beauty crafted exclusively for you.
-        </p>
-        
-        <div style={styles.ctaGroup}>
-          <a href="#booking" className="btn btn-primary" style={styles.btnPrimary}>Book Your Appointment</a>
-          <a href="#services" className="btn btn-secondary" style={styles.btnSecondary}>Explore Services</a>
+    <section id="home" className="hero" ref={heroRef}>
+      {/* Background image */}
+      <div className="hero__media">
+        <img
+          src="/images/nidas-salon/hero.webp"
+          alt="Nida's Salon interior — arched gold mirrors, Karachi"
+          className="hero__img"
+          fetchpriority="high"
+        />
+        <div className="hero__overlay" />
+      </div>
+
+      {/* Content */}
+      <div className="hero__content wrap">
+        <div className="hero__meta hero__anim hero__anim--1">
+          <span className="label" style={{ color: 'var(--champagne)' }}>
+            Nida's Salon
+          </span>
+          <span className="label" style={{ color: 'rgba(248,244,239,0.5)' }}>
+            Karachi
+          </span>
         </div>
 
-        <div style={styles.bottomInfo}>
-          <div style={styles.infoBlock}>
-            <span className="label-uppercase">Karachi</span>
-            <span style={styles.infoDetail}>12 PM — 9 PM</span>
+        <h1 className="hero__headline hero__anim hero__anim--2">
+          Where<br />
+          <em>Elegance</em><br />
+          Meets<br />
+          Artistry.
+        </h1>
+
+        <p className="hero__sub hero__anim hero__anim--3">
+          Beauty crafted exclusively for you.
+        </p>
+
+        <div className="hero__ctas hero__anim hero__anim--4">
+          <a href="#booking" className="btn btn-dark btn-arrow">
+            BOOK APPOINTMENT
+          </a>
+          <a href="#services" className="btn btn-outline-light btn-arrow">
+            EXPLORE SERVICES
+          </a>
+        </div>
+
+        <div className="hero__info hero__anim hero__anim--5">
+          <div className="hero__info-item">
+            <span className="label" style={{ color: 'var(--champagne)' }}>Hours</span>
+            <span>12 PM — 9 PM</span>
           </div>
-          <div style={styles.infoBlockRight}>
-            <span className="label-uppercase" style={styles.servicesLabel}>Hair • Skin • Nails • Makeup • Spa</span>
+          <div className="hero__info-divider" />
+          <div className="hero__info-item">
+            <span className="label" style={{ color: 'var(--champagne)' }}>Rating</span>
+            <span>4.9 ★ · 142 Reviews</span>
           </div>
         </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="hero__scroll hero__anim hero__anim--5">
+        <div className="hero__scroll-line" />
+        <span className="label" style={{ color: 'rgba(248,244,239,0.4)' }}>SCROLL</span>
       </div>
     </section>
   );
 }
-
-const styles = {
-  heroSection: {
-    position: 'relative',
-    height: '100vh',
-    minHeight: '600px',
-    display: 'flex',
-    alignItems: 'center',
-    overflow: 'hidden',
-    backgroundColor: 'var(--color-espresso)',
-    color: 'var(--color-ivory)',
-  },
-  backgroundImage: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover',
-    zIndex: 1,
-    opacity: 0.6,
-  },
-  overlay: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    backgroundColor: 'rgba(41, 35, 33, 0.55)',
-    zIndex: 2,
-  },
-  contentContainer: {
-    position: 'relative',
-    zIndex: 3,
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    height: '100%',
-    paddingTop: '80px', // account for nav
-  },
-  eyebrow: {
-    color: 'var(--color-champagne)',
-    marginBottom: '1.5rem',
-    display: 'block',
-  },
-  headline: {
-    color: 'var(--color-white)',
-    marginBottom: '1.5rem',
-  },
-  supportingCopy: {
-    fontSize: 'clamp(1rem, 2vw, 1.25rem)',
-    maxWidth: '500px',
-    marginBottom: '3rem',
-    opacity: 0.9,
-  },
-  ctaGroup: {
-    display: 'flex',
-    gap: '1rem',
-    flexWrap: 'wrap',
-    marginBottom: 'auto', // Pushes bottom info down if needed, but flex-direction might need adjusting
-  },
-  btnPrimary: {
-    backgroundColor: 'var(--color-champagne)',
-    color: 'var(--color-espresso)',
-  },
-  btnSecondary: {
-    borderColor: 'var(--color-ivory)',
-    color: 'var(--color-ivory)',
-  },
-  bottomInfo: {
-    marginTop: 'auto',
-    paddingBottom: '2rem',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'flex-end',
-    flexWrap: 'wrap',
-    gap: '1rem',
-    width: '100%',
-  },
-  infoBlock: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '0.25rem',
-  },
-  infoDetail: {
-    fontFamily: 'var(--font-sans)',
-  },
-  infoBlockRight: {
-    display: 'flex',
-    alignItems: 'flex-end',
-  },
-  servicesLabel: {
-    color: 'var(--color-champagne)',
-    opacity: 0.8,
-  }
-};

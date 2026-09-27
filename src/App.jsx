@@ -3,6 +3,7 @@ import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import TrustStrip from './components/TrustStrip';
 import About from './components/About';
+import Founder from './components/Founder';
 import Services from './components/Services';
 import HairFeature from './components/HairFeature';
 import SkinFeature from './components/SkinFeature';
@@ -27,6 +28,7 @@ function App() {
         <Hero />
         <TrustStrip />
         <About />
+        <Founder />
         <Services />
         <HairFeature />
         <SkinFeature />

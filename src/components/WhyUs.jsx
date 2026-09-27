@@ -1,91 +1,35 @@
 import React from 'react';
+import { useReveal } from '../hooks/useReveal';
 
-const reasons = [
-  {
-    number: '01',
-    title: 'COMPLETE BEAUTY CARE',
-    description: 'Hair, skin, nails, makeup, spa and beauty services.'
-  },
-  {
-    number: '02',
-    title: 'PERSONALIZED EXPERIENCE',
-    description: 'Services designed around each client\'s preferences and occasion.'
-  },
-  {
-    number: '03',
-    title: 'BRIDAL BEAUTY',
-    description: 'Dedicated services for important celebrations.'
-  },
-  {
-    number: '04',
-    title: 'MODERN BEAUTY SERVICES',
-    description: 'Balayage, acrylic nails, Korean spa, makeup and contemporary beauty treatments.'
-  },
-  {
-    number: '05',
-    title: 'BEAUTY UNDER ONE ROOF',
-    description: 'Multiple beauty categories available in one salon.'
-  }
+const points = [
+  { n: '01', title: 'Personalized Beauty', desc: 'A complete experience designed around your individual preferences and occasion.' },
+  { n: '02', title: 'Beauty Under One Roof', desc: 'Hair, skin, nails, makeup, bridal and spa — all in one salon.' },
+  { n: '03', title: 'Bridal Beauty', desc: 'Dedicated beauty services crafted for your most important celebrations.' },
+  { n: '04', title: 'Modern Services', desc: 'Balayage, Korean spa, acrylic nails and contemporary treatments.' },
+  { n: '05', title: 'Local Karachi Salon', desc: 'Conveniently located in Amil Colony, near Mazar-e-Quaid, Karachi.' },
 ];
 
 export default function WhyUs() {
+  const ref = useReveal();
   return (
-    <section id="whyus" className="section-padding container" style={styles.section}>
-      <h2 className="heading-lg" style={styles.headline}>Why Nida's Salon</h2>
-      
-      <div style={styles.list}>
-        {reasons.map((reason, index) => (
-          <div key={index} style={styles.listItem}>
-            <div style={styles.number}>{reason.number}</div>
-            <div style={styles.content}>
-              <h3 style={styles.title}>{reason.title}</h3>
-              <p style={styles.desc}>{reason.description}</p>
+    <section id="whyus" style={{ background: 'var(--ivory)', padding: '7rem 0', borderTop: '1px solid var(--nude)' }} ref={ref}>
+      <div className="wrap">
+        <div style={{ marginBottom: '4rem' }}>
+          <span className="label reveal" style={{ color: 'var(--champagne)', display: 'block', marginBottom: '1rem' }}>Why Choose Us</span>
+          <h2 className="display-md reveal delay-1">Why Nida's Salon.</h2>
+        </div>
+        <div style={{ maxWidth: '700px' }}>
+          {points.map((p, i) => (
+            <div key={i} className="reveal" style={{ transitionDelay: `${0.1 * i}s`, display: 'flex', gap: '2rem', padding: '2rem 0', borderBottom: '1px solid var(--nude)', alignItems: 'flex-start' }}>
+              <span className="label" style={{ color: 'var(--champagne)', minWidth: '2rem', paddingTop: '3px' }}>{p.n}</span>
+              <div>
+                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '1rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>{p.title}</h3>
+                <p className="body-sm" style={{ opacity: 0.65 }}>{p.desc}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
 }
-
-const styles = {
-  section: {
-    backgroundColor: 'var(--color-ivory)',
-  },
-  headline: {
-    marginBottom: '4rem',
-    textAlign: 'center',
-  },
-  list: {
-    display: 'flex',
-    flexDirection: 'column',
-    maxWidth: '800px',
-    margin: '0 auto',
-  },
-  listItem: {
-    display: 'flex',
-    gap: '2rem',
-    padding: '2rem 0',
-    borderBottom: '1px solid var(--color-nude)',
-  },
-  number: {
-    fontFamily: 'var(--font-sans)',
-    fontSize: '1rem',
-    color: 'var(--color-champagne)',
-    paddingTop: '0.25rem',
-  },
-  content: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '0.5rem',
-  },
-  title: {
-    fontFamily: 'var(--font-sans)',
-    fontSize: '1.25rem',
-    textTransform: 'uppercase',
-    letterSpacing: '0.05em',
-  },
-  desc: {
-    opacity: 0.8,
-  }
-};

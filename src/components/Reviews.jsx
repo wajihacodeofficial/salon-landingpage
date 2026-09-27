@@ -1,85 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useReveal } from '../hooks/useReveal';
+import './Reviews.css';
+
+const reviews = [
+  { text: "Such a relaxing atmosphere. The staff were so professional and attentive throughout.", stars: 5 },
+  { text: "Quality beauty services and very knowledgeable staff. Highly recommended for anyone in Karachi.", stars: 5 },
+  { text: "Clean, tidy salon with a warm and welcoming environment. I always leave feeling great.", stars: 5 },
+  { text: "Gentle, caring service from start to finish. The best salon experience I've had in Karachi.", stars: 5 },
+];
 
 export default function Reviews() {
+  const [current, setCurrent] = useState(0);
+  const ref = useReveal();
+
+  const prev = () => setCurrent((c) => (c - 1 + reviews.length) % reviews.length);
+  const next = () => setCurrent((c) => (c + 1) % reviews.length);
+
   return (
-    <section id="reviews" className="section-padding container" style={styles.section}>
-      <div style={styles.header}>
-        <h2 className="heading-lg" style={styles.headline}>Loved by our clients.</h2>
-        <div style={styles.stats}>
-          <span style={styles.score}>4.9 / 5</span>
-          <span className="label-uppercase" style={styles.reviewCount}>142 Reviews</span>
-        </div>
-      </div>
-
-      <div style={styles.grid}>
-        {[
-          "Relaxing atmosphere and professional service.",
-          "Quality beauty services and very knowledgeable staff.",
-          "Clean and tidy environment. Gentle and attentive service.",
-        ].map((quote, idx) => (
-          <div key={idx} style={styles.card}>
-            <div style={styles.stars}>★★★★★</div>
-            <p style={styles.quote}>"{quote}"</p>
+    <section id="reviews" className="reviews" ref={ref}>
+      <div className="wrap">
+        <div className="reviews__rating reveal">
+          <p className="reviews__score">4.9</p>
+          <div>
+            <p className="reviews__stars">★★★★★</p>
+            <p className="label reviews__count" style={{ color: 'var(--champagne)' }}>142 Google Reviews</p>
           </div>
-        ))}
-      </div>
+        </div>
 
-      <div style={styles.ctaContainer}>
-        <a href="https://g.page/nidassalon" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">READ ALL REVIEWS</a>
+        <h2 className="display-md reviews__headline reveal delay-1">Loved by our clients.</h2>
+
+        <div className="reviews__carousel reveal delay-2">
+          <blockquote className="reviews__quote">
+            <p>"{reviews[current].text}"</p>
+          </blockquote>
+
+          <div className="reviews__controls">
+            <button onClick={prev} className="reviews__btn" aria-label="Previous review">←</button>
+            <span className="reviews__indicator label">{current + 1} / {reviews.length}</span>
+            <button onClick={next} className="reviews__btn" aria-label="Next review">→</button>
+          </div>
+        </div>
+
+        <div className="reviews__cta reveal delay-3">
+          <a
+            href="https://www.google.com/maps/search/Nida's+Salon+Amil+Colony+Karachi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-outline"
+          >
+            READ ALL REVIEWS
+          </a>
+        </div>
       </div>
     </section>
   );
 }
-
-const styles = {
-  section: {
-    backgroundColor: 'var(--color-nude)',
-    textAlign: 'center',
-  },
-  header: {
-    marginBottom: '4rem',
-  },
-  headline: {
-    marginBottom: '1rem',
-  },
-  stats: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: '0.5rem',
-  },
-  score: {
-    fontFamily: 'var(--font-serif)',
-    fontSize: '2rem',
-  },
-  reviewCount: {
-    color: 'var(--color-espresso)',
-    opacity: 0.8,
-  },
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-    gap: '2rem',
-    marginBottom: '4rem',
-  },
-  card: {
-    backgroundColor: 'var(--color-ivory)',
-    padding: '2rem',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: '1rem',
-  },
-  stars: {
-    color: 'var(--color-champagne)',
-    letterSpacing: '0.2em',
-  },
-  quote: {
-    fontFamily: 'var(--font-serif)',
-    fontSize: '1.25rem',
-    fontStyle: 'italic',
-  },
-  ctaContainer: {
-    marginTop: '2rem',
-  }
-};
