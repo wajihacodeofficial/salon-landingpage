@@ -1,0 +1,301 @@
+/* ============================================================
+   NIDA'S SALON — GLOBAL DESIGN SYSTEM
+   ============================================================ */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;700&display=swap');
+
+/* ============================================================
+   CUSTOM PROPERTIES
+   ============================================================ */
+:root {
+  --ivory:      #F8F4EF;
+  --espresso:   #292321;
+  --nude:       #E9D8CF;
+  --rose:       #C9A6A0;
+  --champagne:  #C8AA87;
+  --white:      #FFFFFF;
+  --black:      #0D0B0A;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans:  'Lato', system-ui, sans-serif;
+
+  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:    cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --nav-h:      72px;
+  --nav-h-sm:   56px;
+}
+
+/* ============================================================
+   RESET
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--ivory);
+  color: var(--espresso);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ============================================================
+   TYPOGRAPHY UTILITIES
+   ============================================================ */
+.serif { font-family: var(--font-serif); }
+.sans  { font-family: var(--font-sans); }
+
+.label {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.display-xl {
+  font-family: var(--font-serif);
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 400;
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+}
+
+.display-lg {
+  font-family: var(--font-serif);
+  font-size: clamp(2.75rem, 5vw, 5rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+.display-md {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.display-sm {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.body-lg {
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+.body-sm {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.wrap {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.wrap--narrow {
+  max-width: 900px;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border: 1px solid transparent;
+  transition: background 0.35s var(--ease-out),
+              color 0.35s var(--ease-out),
+              border-color 0.35s var(--ease-out),
+              transform 0.25s var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-dark {
+  background: var(--espresso);
+  color: var(--ivory);
+  border-color: var(--espresso);
+}
+
+.btn-dark:hover {
+  background: var(--champagne);
+  border-color: var(--champagne);
+  color: var(--espresso);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--espresso);
+  border-color: var(--espresso);
+}
+
+.btn-outline:hover {
+  background: var(--espresso);
+  color: var(--ivory);
+}
+
+.btn-outline-light {
+  background: transparent;
+  color: var(--ivory);
+  border-color: rgba(248, 244, 239, 0.5);
+}
+
+.btn-outline-light:hover {
+  background: var(--champagne);
+  color: var(--espresso);
+  border-color: var(--champagne);
+}
+
+.btn-arrow::after {
+  content: '→';
+  transition: transform 0.3s var(--ease-out);
+}
+
+.btn-arrow:hover::after {
+  transform: translateX(4px);
+}
+
+/* ============================================================
+   DIVIDERS
+   ============================================================ */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(41, 35, 33, 0.12);
+}
+
+.divider--light {
+  background: rgba(248, 244, 239, 0.15);
+}
+
+/* ============================================================
+   SCROLL REVEAL BASE — elements start invisible
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.85s var(--ease-out), transform 0.85s var(--ease-out);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.reveal-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+}
+
+/* Stagger delays */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.35s; }
+.delay-4 { transition-delay: 0.5s; }
+.delay-5 { transition-delay: 0.65s; }
+
+/* ============================================================
+   IMAGE MASK REVEAL
+   ============================================================ */
+.img-mask {
+  overflow: hidden;
+}
+
+.img-mask img {
+  transform: scale(1.08);
+  transition: transform 1.2s var(--ease-out);
+}
+
+.img-mask.is-visible img {
+  transform: scale(1);
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal, .reveal-left, .reveal-right {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,48 @@
+import React from 'react';
+import Navigation from './components/Navigation';
+import Hero from './components/Hero';
+import TrustStrip from './components/TrustStrip';
+import About from './components/About';
+import Services from './components/Services';
+import HairFeature from './components/HairFeature';
+import SkinFeature from './components/SkinFeature';
+import NailsFeature from './components/NailsFeature';
+import BridalFeature from './components/BridalFeature';
+import SignatureExperience from './components/SignatureExperience';
+import Gallery from './components/Gallery';
+import Reviews from './components/Reviews';
+import WhyUs from './components/WhyUs';
+import Location from './components/Location';
+import BookingSection from './components/BookingSection';
+import SocialMedia from './components/SocialMedia';
+import Footer from './components/Footer';
+
+import './App.css';
+
+function App() {
+  return (
+    <div className="app-container">
+      <Navigation />
+      <main>
+        <Hero />
+        <TrustStrip />
+        <About />
+        <Services />
+        <HairFeature />
+        <SkinFeature />
+        <NailsFeature />
+        <BridalFeature />
+        <SignatureExperience />
+        <Gallery />
+        <Reviews />
+        <WhyUs />
+        <Location />
+        <BookingSection />
+        <SocialMedia />
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+export default App;

@@ -1,0 +1,30 @@
+{
+  "name": "salon-landingpage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wajihacodeofficial/salon-landingpage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/wajihacodeofficial/salon-landingpage/issues"
+  },
+  "homepage": "https://github.com/wajihacodeofficial/salon-landingpage#readme",
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.1.1",
+    "gsap": "^3.15.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "vite": "^8.3.1"
+  }
+}
