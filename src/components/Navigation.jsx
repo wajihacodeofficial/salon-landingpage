@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Navigation.css';
 
-const links = ['About', 'Services', 'Bridal', 'Gallery', 'Reviews', 'Contact'];
+const links = ['About', 'Services', 'Gallery', 'Reviews', 'Contact'];
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
