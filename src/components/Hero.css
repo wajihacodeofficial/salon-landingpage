@@ -81,8 +81,27 @@
 
 .hero__ctas {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  gap: 2rem;
   flex-wrap: wrap;
+}
+
+.hero__link {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--ivory);
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(248,244,239,0.3);
+  padding-bottom: 0.2rem;
+  transition: all 0.3s ease;
+}
+
+.hero__link:hover {
+  color: var(--champagne);
+  border-color: var(--champagne);
 }
 
 .hero__info {

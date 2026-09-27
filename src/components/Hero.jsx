@@ -56,8 +56,8 @@ export default function Hero() {
           <a href="#booking" className="btn btn-dark btn-arrow" style={{ padding: '1.25rem 2.5rem' }}>
             BOOK AN APPOINTMENT
           </a>
-          <a href="#services" className="btn btn-outline-light" style={{ padding: '1.25rem 2.5rem', border: 'none', background: 'transparent' }}>
-            Explore Services
+          <a href="#services" className="hero__link">
+            EXPLORE SERVICES
           </a>
         </div>
 
