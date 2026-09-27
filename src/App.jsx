@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
+import QuickDiscovery from './components/QuickDiscovery';
 
 import About from './components/About';
 import Founder from './components/Founder';
@@ -22,6 +23,7 @@ function App() {
       <Navigation />
       <main>
         <Hero />
+        <QuickDiscovery />
 
         <About />
         <Services />

@@ -38,18 +38,14 @@ export default function Hero() {
       <div className="hero__content wrap">
         <div className="hero__meta hero__anim hero__anim--1">
           <span className="label" style={{ color: 'var(--champagne)' }}>
-            Nida's Salon
-          </span>
-          <span className="label" style={{ color: 'rgba(248,244,239,0.5)' }}>
-            Karachi
+            Nida's Salon · Karachi
           </span>
         </div>
 
         <h1 className="hero__headline hero__anim hero__anim--2">
           Where<br />
           <em>Elegance</em><br />
-          Meets<br />
-          Artistry.
+          Meets Artistry.
         </h1>
 
         <p className="hero__sub hero__anim hero__anim--3">
@@ -57,23 +53,21 @@ export default function Hero() {
         </p>
 
         <div className="hero__ctas hero__anim hero__anim--4">
-          <a href="#booking" className="btn btn-dark btn-arrow">
-            BOOK APPOINTMENT
+          <a href="#booking" className="btn btn-dark btn-arrow" style={{ padding: '1.25rem 2.5rem' }}>
+            BOOK AN APPOINTMENT
           </a>
-          <a href="#services" className="btn btn-outline-light btn-arrow">
-            EXPLORE SERVICES
+          <a href="#services" className="btn btn-outline-light" style={{ padding: '1.25rem 2.5rem', border: 'none', background: 'transparent' }}>
+            Explore Services
           </a>
         </div>
 
-        <div className="hero__info hero__anim hero__anim--5">
+        <div className="hero__info hero__anim hero__anim--5" style={{ marginTop: '2.5rem', opacity: 0.6 }}>
           <div className="hero__info-item">
-            <span className="label" style={{ color: 'var(--champagne)' }}>Hours</span>
             <span>12 PM — 9 PM</span>
           </div>
           <div className="hero__info-divider" />
           <div className="hero__info-item">
-            <span className="label" style={{ color: 'var(--champagne)' }}>Rating</span>
-            <span>4.9 ★ · 142 Reviews</span>
+            <span>4.9 ★ · 142 Google Reviews</span>
           </div>
         </div>
       </div>
