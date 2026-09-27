@@ -69,17 +69,16 @@
 @media (min-width: 768px) {
   .gallery__grid {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    aspect-ratio: 2 / 1.1; /* Perfectly proportions the 3x6 grid so span-4 items are square */
+    grid-template-rows: repeat(6, 200px);
     gap: 1rem;
   }
 
   .gallery__item {
-    aspect-ratio: auto; /* Let the grid rows dictate the height */
+    aspect-ratio: auto;
     height: 100%;
   }
 
-  /* Exact mosaic layout from the user's reference image */
+  /* Mosaic layout */
   .gallery__item:nth-child(1) { grid-column: 1; grid-row: 1 / span 4; }
   .gallery__item:nth-child(2) { grid-column: 2; grid-row: 1 / span 2; }
   .gallery__item:nth-child(3) { grid-column: 3; grid-row: 1 / span 2; }
