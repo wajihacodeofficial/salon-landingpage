@@ -20,13 +20,13 @@ export default function Founder() {
 
         {/* Right: Content */}
         <div className="founder__content">
-          <span className="section-eyebrow reveal delay-1" style={{ color: 'var(--espresso)' }}>Meet The Founder</span>
+          <span className="section-eyebrow reveal delay-1" style={{ color: 'var(--espresso)', textAlign: 'left' }}>Meet The Founder</span>
           
           <h2 className="display-sm founder__headline reveal delay-2">
             Where you'll <em>always</em><br />leave as your best self
           </h2>
           
-          <p className="body-sm founder__copy reveal delay-3">
+          <p className="body-sm founder__copy reveal delay-3" style={{ textAlign: 'justify' }}>
             Nida's Salon is a premier space in Amil Colony where you'll feel relaxed and pampered through expert styling and beauty services. As your stylist, I'm committed to giving you a positive in-salon experience. Even when life feels chaotic, you can feel comforted knowing that when it's hair day, you'll always walk out of here lighter, empowered, and looking your very best.
           </p>
           
