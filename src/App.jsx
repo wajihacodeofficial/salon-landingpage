@@ -1,7 +1,7 @@
 import React from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
-import TrustStrip from './components/TrustStrip';
+
 import About from './components/About';
 import Founder from './components/Founder';
 import Services from './components/Services';
@@ -26,7 +26,7 @@ function App() {
       <Navigation />
       <main>
         <Hero />
-        <TrustStrip />
+
         <About />
         <Services />
         <HairFeature />
