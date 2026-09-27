@@ -11,8 +11,8 @@ export default function About() {
         {/* Left: Large feature image */}
         <div className="about__media reveal-left">
           <img
-            src="/images/nidas-salon/interior.webp"
-            alt="Nida's Salon interior space"
+            src="/images/nidas-salon/hair.webp"
+            alt="Hair styling at Nida's Salon"
             className="about__img"
             loading="lazy"
           />
