@@ -1,0 +1,44 @@
+.quick-discovery {
+  background: var(--ivory);
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--nude);
+  text-align: center;
+}
+
+.quick-discovery__title {
+  color: var(--champagne);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.15em;
+}
+
+.quick-discovery__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.quick-discovery__link {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--espresso);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.quick-discovery__link:hover {
+  color: var(--champagne);
+}
+
+.quick-discovery__sep {
+  color: var(--nude);
+}
+
+@media (max-width: 600px) {
+  .quick-discovery__links {
+    gap: 1rem;
+  }
+}
