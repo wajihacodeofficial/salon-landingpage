@@ -15,7 +15,7 @@ import Reviews from './components/Reviews';
 import WhyUs from './components/WhyUs';
 
 import BookingSection from './components/BookingSection';
-import SocialMedia from './components/SocialMedia';
+
 import Footer from './components/Footer';
 
 import './App.css';
@@ -40,7 +40,7 @@ function App() {
         <WhyUs />
 
         <BookingSection />
-        <SocialMedia />
+
       </main>
       <Footer />
     </div>
